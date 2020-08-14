@@ -4,11 +4,29 @@ import CategoriesScreen from '../screens/CategoriesScreen';
 import CategoryMealsScreen from '../screens/CategoryMealsScreen';
 import MealDetailScreen from '../screens/MealDetailScreen';
 
+import { Platform } from 'react-native';
+import Colors from '../constants/Colors'
+
 
 const MealsNavigator = createStackNavigator({
-  Categories: CategoriesScreen, 
-  CategoryMeals: CategoryMealsScreen,
-  MealDetail: MealDetailScreen
+  Categories: {
+    screen: CategoriesScreen
+  },
+  CategoryMeals: {
+    screen: CategoryMealsScreen
+  },
+  MealDetail: {
+    screen: MealDetailScreen
+  }
+}, {
+  mode: 'modal',
+  
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
+    },
+    headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor
+  }
 });
 
 export default createAppContainer(MealsNavigator);
