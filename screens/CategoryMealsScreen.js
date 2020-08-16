@@ -44,17 +44,6 @@ const CategoryMealsScreen = props => {
         renderItem={renderMealItem}
         style={{width: '95%'}}
       />
-      
-      {/* <Text>You're on the Category Meals Screen!</Text> 
-      <Text>{selectedCategory.title}</Text>
-      <Button 
-        title="See Meal Details"
-        onPress={() => props.navigation.navigate('MealDetail')}
-      />
-      <Button 
-        title="Go Back"
-        onPress={() => props.navigation.pop()}
-      /> */}
     </View>
   );
 };
